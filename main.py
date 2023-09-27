@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, UploadFile, File, Form
 import sqlite3
 from uuid import uuid4
 from pydantic import BaseModel
@@ -10,6 +10,7 @@ class Report(BaseModel):
     id: Optional[str] = None
     company_name: str
     industry: str
+    icon_path: Optional[str] = None
 
 
 app = FastAPI()
@@ -33,10 +34,11 @@ def get_all_reports():
     reports_data = cursor.fetchall()
     conn.close()
 
-    items = [Report(id=id, company_name=company_name, industry=industry) for id, company_name, industry in reports_data]
+    items = [Report(id=id, company_name=company_name, industry=industry, icon_path=icon_path) for id, company_name, industry, icon_path in reports_data]
     return items
 
 
+# TODO: next week
 @app.get("/reports/{report_id}")
 def get_report_by_id(report_id: int):
     conn = sqlite3.connect('db/app_database.db')
@@ -54,14 +56,33 @@ def get_report_by_id(report_id: int):
 
 
 @app.post("/reports")
-def insert_report(report: Report):
-    conn = sqlite3.connect('db/app_database.db')
-    report.id = str(uuid4())
+def insert_report(company_name: str = Form(...),
+                  industry: str = Form(...),
+                  pdf: UploadFile = File(...),
+                  image: UploadFile = File(...)):
+    if pdf.content_type != "application/pdf":
+        raise HTTPException(status_code=400, detail="File is not a PDF")
 
-    data = (report.id, report.company_name, report.industry)
+        # Ensure the image is of correct type. For example, checking if it's a PNG:
+    if image.content_type not in ["image/png", "image/jpeg", "image/jpg"]:
+        raise HTTPException(status_code=400, detail="Image is not valid")
+
+    report_id = str(uuid4())
+
+    # Handle saving files to storage (for now, saving to the local disk)
+    with open(f"db/pdfs/{report_id}.pdf", "wb") as buffer:
+        buffer.write(pdf.file.read())
+
+    icon_path = f"db/icons/{report_id}.{image.filename.split('.')[-1]}"
+    with open(icon_path, "wb") as buffer:
+        buffer.write(image.file.read())
+
+    conn = sqlite3.connect('db/app_database.db')
+
+    data = (report_id, company_name, industry, icon_path)
 
     cursor = conn.cursor()
-    cursor.execute('INSERT into reports VALUES (?, ?, ?)', data)
+    cursor.execute('INSERT into reports VALUES (?, ?, ?, ?)', data)
     conn.commit()
     conn.close()
 
