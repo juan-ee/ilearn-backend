@@ -33,12 +33,12 @@ cursor.execute('''
 
 # cursor.execute('''
 #     INSERT INTO reports (
-#     id, company_name, industry, logo_path, pdf, pptx, rating_ecovadis, rating_cdp, rating_sustainalitycs, rating_msci, rating_sp_dow_jones,
+#     id, company_name, industry, logo_path, pdf_path, pptx_path, rating_ecovadis, rating_cdp, rating_sustainalitycs, rating_msci, rating_sp_dow_jones,
 #     base_of_operations, employees_number, risks, opportunities, env_general, env_emission_management, env_resources_management, env_waste_management,
 #     social, governance_economics
 # ) VALUES (
-#     '1', 'ABC Company', 'Technology', '/logos/abc_logo.png', '/reports/abc_report.pdf', '/reports/abc_report.pptx', 'A', 'B', 'C', 'D', 'E',
-#     'New York', 500, 'Environmental risks', 'Market expansion', 'Green initiatives', 'Reduced emissions', 'Resource efficiency', 'Waste reduction',
+#     '123456789', 'Henkel', 'Chemical', 'logos/123456789.png', 'pdfs/123456789.pdf', 'pptxs/123456789.pptx', 'Platinum Medal', 'A-', '18.5 ESG Risk', 'AAA', 'None',
+#     'Duesseldorf', 519500, 'Environmental risks', 'Market expansion', 'Green initiatives', 'Reduced emissions', 'Resource efficiency', 'Waste reduction',
 #     'Community engagement', 'Strong governance'
 # )
 # ''')
