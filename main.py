@@ -1,11 +1,11 @@
 from fastapi import FastAPI, HTTPException, UploadFile, File, Form
 from fastapi.staticfiles import StaticFiles
-
 import sqlite3
 from pydantic import BaseModel
 from typing import Optional
 from fastapi.middleware.cors import CORSMiddleware
 from utilities import get_industry, get_timestamp
+import shutil
 
 
 class Report(BaseModel):
@@ -87,9 +87,14 @@ def insert_report(company_name: str = Form(...),
     with open(pdf_path, "wb") as buffer:
         buffer.write(pdf.file.read())
 
+    # save logo
     logo_path = f"logos/{report_id}.{image.filename.split('.')[-1]}"
     with open(logo_path, "wb") as buffer:
         buffer.write(image.file.read())
+
+    # process pdf
+
+    shutil.copy('template.pptx', f'pptxs/{report_id}.pptx')
 
     conn = sqlite3.connect('db/app_database.db')
 
