@@ -93,16 +93,16 @@ def insert_report(company_name: str = Form(...),
         buffer.write(image.file.read())
 
     # process pdf
-
-    shutil.copy('template.pptx', f'pptxs/{report_id}.pptx')
+    pptx_path = f'pptxs/{report_id}.pptx'
+    shutil.copy('template.pptx', pptx_path)
 
     conn = sqlite3.connect('db/app_database.db')
 
     industry = get_industry()
-    data = (report_id, company_name, industry, logo_path, pdf_path)
+    data = (report_id, company_name, industry, logo_path, pdf_path, pptx_path)
 
     cursor = conn.cursor()
-    cursor.execute('INSERT into reports (id, company_name, industry, logo_path, pdf_path) VALUES (?, ?, ?, ?, ?)', data)
+    cursor.execute('INSERT into reports (id, company_name, industry, logo_path, pdf_path, pptx_path) VALUES (?, ?, ?, ?, ?, ?)', data)
     conn.commit()
     conn.close()
 
