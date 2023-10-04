@@ -13,6 +13,7 @@ class Report(BaseModel):
     company_name: str
     industry: str
     logo_path: Optional[str] = None
+    pdf_path: Optional[str] = None
 
 
 app = FastAPI()
@@ -36,14 +37,15 @@ app.mount("/pptxs", StaticFiles(directory="pptxs"), name="pptxs")
 def get_all_reports():
     conn = sqlite3.connect('db/app_database.db')
     cursor = conn.cursor()
-    cursor.execute('SELECT * FROM reports')
+    cursor.execute('SELECT id, company_name, industry, logo_path, pdf_path FROM reports')
     reports_data = cursor.fetchall()
     conn.close()
 
     items = [Report(id=id,
                     company_name=company_name,
                     industry=industry,
-                    logo_path=logo_path) for id, company_name, industry, logo_path in reports_data]
+                    logo_path=logo_path,
+                    pdf_path=pdf_path) for id, company_name, industry, logo_path, pdf_path in reports_data]
     return items
 
 
