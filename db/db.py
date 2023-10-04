@@ -10,7 +10,7 @@ cursor.execute('''
         id TEXT PRIMARY KEY,
         company_name TEXT NOT NULL,
         industry TEXT NOT NULL,
-        icon_path TEXT NOT NULL                        
+        logo_path TEXT NOT NULL
     )
 ''')
 
