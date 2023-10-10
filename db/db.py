@@ -18,7 +18,7 @@ cursor.execute('''
         rating_sustainalitycs TEXT,
         rating_msci TEXT,
         rating_sp_dow_jones TEXT,
-        base_of_operations TEXT,
+        location TEXT,
         employees_number INT,
         risks TEXT,
         opportunities TEXT,
