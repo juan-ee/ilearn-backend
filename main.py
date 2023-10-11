@@ -4,7 +4,7 @@ import sqlite3
 from pydantic import BaseModel
 from typing import Optional
 from fastapi.middleware.cors import CORSMiddleware
-from utilities import get_industry, get_timestamp
+from utilities import get_timestamp, get_industry_auto
 import shutil
 
 
@@ -98,7 +98,7 @@ def insert_report(company_name: str = Form(...),
 
     conn = sqlite3.connect('db/app_database.db')
 
-    industry = get_industry()
+    industry = get_industry_auto(company_name)
     data = (report_id, company_name, industry, logo_path, pdf_path, pptx_path)
 
     cursor = conn.cursor()
@@ -122,5 +122,5 @@ def get_all_reports():
                     industry=data[2],
                     logo_path=data[3],
                     pdf_path=data[4],
-                    pptx_path= data[5]) for data in reports_data]
+                    pptx_path=data[5]) for data in reports_data]
     return items
