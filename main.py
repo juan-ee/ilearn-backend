@@ -4,7 +4,7 @@ import sqlite3
 from pydantic import BaseModel
 from typing import Optional
 from fastapi.middleware.cors import CORSMiddleware
-from utilities import get_timestamp, get_industry_auto
+from utilities import *
 import shutil
 
 
@@ -15,6 +15,11 @@ class Report(BaseModel):
     logo_path: Optional[str] = None
     pdf_path: Optional[str] = None
     pptx_path: Optional[str] = None
+    rating_ecovadis: str
+    rating_cdp: str
+    rating_sp_dow_jones: str
+    rating_msci: str
+    rating_sustainalitycs: str
 
 
 app = FastAPI()
@@ -38,7 +43,7 @@ app.mount("/pptxs", StaticFiles(directory="pptxs"), name="pptxs")
 def get_all_reports():
     conn = sqlite3.connect('db/app_database.db')
     cursor = conn.cursor()
-    cursor.execute('SELECT id, company_name, industry, logo_path, pdf_path, pptx_path FROM reports')
+    cursor.execute('SELECT id, company_name, industry, logo_path, pdf_path, pptx_path, rating_ecovadis, rating_cdp, rating_sp_dow_jones, rating_msci, rating_sustainalitycs FROM reports')
     reports_data = cursor.fetchall()
     conn.close()
 
@@ -47,7 +52,12 @@ def get_all_reports():
                     industry=industry,
                     logo_path=logo_path,
                     pdf_path=pdf_path,
-                    pptx_path=pptx_path) for id, company_name, industry, logo_path, pdf_path, pptx_path in reports_data]
+                    pptx_path=pptx_path,
+                    rating_ecovadis=rating_ecovadis,
+                    rating_cdp=rating_cdp,
+                    rating_sp_dow_jones=rating_sp_dow_jones,
+                    rating_msci=rating_msci,
+                    rating_sustainalitycs=rating_sustainalitycs) for id, company_name, industry, logo_path, pdf_path, pptx_path, rating_ecovadis, rating_cdp, rating_sp_dow_jones, rating_msci, rating_sustainalitycs in reports_data]
     return items
 
 
@@ -99,10 +109,17 @@ def insert_report(company_name: str = Form(...),
     conn = sqlite3.connect('db/app_database.db')
 
     industry = get_industry_auto(company_name)
-    data = (report_id, company_name, industry, logo_path, pdf_path, pptx_path)
+    rating_ecovadis = get_ratings_ecovadis()
+    rating_cdp = get_ratings_cdp()
+    rating_sp_dow_jones = get_ratings_dowjones()
+    rating_msci = get_ratings_msci()
+    rating_sustainalitycs = get_ratings_sustainalytics()
+
+    data = (report_id, company_name, industry, logo_path, pdf_path, pptx_path, rating_ecovadis, rating_cdp, rating_sp_dow_jones, rating_msci, rating_sustainalitycs)
 
     cursor = conn.cursor()
-    cursor.execute('INSERT into reports (id, company_name, industry, logo_path, pdf_path, pptx_path) VALUES (?, ?, ?, ?, ?, ?)', data)
+    cursor.execute('INSERT into reports (id, company_name, industry, logo_path, pdf_path, pptx_path, rating_ecovadis, rating_cdp, rating_sp_dow_jones, rating_msci, rating_sustainalitycs)'
+                   'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', data)
     conn.commit()
     conn.close()
 
@@ -122,5 +139,10 @@ def get_all_reports():
                     industry=data[2],
                     logo_path=data[3],
                     pdf_path=data[4],
-                    pptx_path=data[5]) for data in reports_data]
+                    pptx_path=data[5],
+                    ratings_ecovadis=data[6],
+                    ratings_cdp=data[7],
+                    ratings_dowjones=data[8],
+                    ratings_msci=data[9],
+                    rating_sustainalitycs=data[10]) for data in reports_data]
     return items

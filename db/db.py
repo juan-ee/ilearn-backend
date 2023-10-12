@@ -15,7 +15,7 @@ cursor.execute('''
         pptx_path TEXT,
         rating_ecovadis TEXT,
         rating_cdp TEXT,
-        rating_sustainalitycs TEXT,
+        rating_sustainalytics TEXT,
         rating_msci TEXT,
         rating_sp_dow_jones TEXT,
         location TEXT,

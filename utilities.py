@@ -40,6 +40,91 @@ INDUSTRIES_AUTO = [
     "Food",
 ]
 
+RATINGS_ECOVADIS = [
+    "Platinum",
+    "Gold",
+    "Silver",
+    "Bronze",
+]
+
+RATINGS_MSCI = [
+    "AAA",
+    "AA",
+    "A",
+    "BBB",
+    "BB",
+    "B",
+    "CCC",
+]
+
+RATINGS_DOWJONES = [
+    "AAA",
+    "AA+",
+    "AA",
+    "AA-",
+    "A+",
+    "A",
+    "A-",
+    "BBB+",
+    "BBB",
+    "BBB-",
+    "BB+",
+    "BB",
+    "BB-",
+    "B+",
+    "B",
+    "B-",
+    "CCC+",
+    "CCC",
+    "CCC-",
+    "CC",
+    "C",
+    "D",
+]
+
+RATINGS_SUSTAINALYTICS = [
+    "A+",
+    "A",
+    "A-",
+    "B+",
+    "B",
+    "B-",
+    "C+",
+    "C",
+    "C-",
+    "D+",
+    "D",
+    "D-",
+]
+
+
+RATINGS_CDP = [
+    "A",
+    "A-",
+    "B",
+    "B-",
+    "C",
+    "C-",
+    "D",
+    "D-",
+]
+
+def get_ratings_cdp():
+    return random.choice(RATINGS_CDP)
+
+
+def get_ratings_sustainalytics():
+    return random.choice(RATINGS_SUSTAINALYTICS)
+
+def get_ratings_dowjones():
+    return random.choice(RATINGS_DOWJONES)
+
+def get_ratings_msci():
+    return random.choice(RATINGS_MSCI)
+
+
+def get_ratings_ecovadis():
+    return random.choice(RATINGS_ECOVADIS)
 
 def get_industry_auto(company_name):
     industry = ""
