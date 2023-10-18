@@ -4,8 +4,9 @@ import sqlite3
 from pydantic import BaseModel
 from typing import Optional
 from fastapi.middleware.cors import CORSMiddleware
-from utilities import *
+from ai import *
 import shutil
+from pptx_filler import save_pptx
 
 
 class Report(BaseModel):
@@ -19,7 +20,7 @@ class Report(BaseModel):
     rating_cdp: str
     rating_sp_dow_jones: str
     rating_msci: str
-    rating_sustainalitycs: str
+    rating_sustainalytics: str
 
 
 app = FastAPI()
@@ -43,7 +44,7 @@ app.mount("/pptxs", StaticFiles(directory="pptxs"), name="pptxs")
 def get_all_reports():
     conn = sqlite3.connect('db/app_database.db')
     cursor = conn.cursor()
-    cursor.execute('SELECT id, company_name, industry, logo_path, pdf_path, pptx_path, rating_ecovadis, rating_cdp, rating_sp_dow_jones, rating_msci, rating_sustainalitycs FROM reports')
+    cursor.execute('SELECT id, company_name, industry, logo_path, pdf_path, pptx_path, rating_ecovadis, rating_cdp, rating_sp_dow_jones, rating_msci, rating_sustainalytics FROM reports')
     reports_data = cursor.fetchall()
     conn.close()
 
@@ -57,7 +58,7 @@ def get_all_reports():
                     rating_cdp=rating_cdp,
                     rating_sp_dow_jones=rating_sp_dow_jones,
                     rating_msci=rating_msci,
-                    rating_sustainalitycs=rating_sustainalitycs) for id, company_name, industry, logo_path, pdf_path, pptx_path, rating_ecovadis, rating_cdp, rating_sp_dow_jones, rating_msci, rating_sustainalitycs in reports_data]
+                    rating_sustainalytics=rating_sustainalytics) for id, company_name, industry, logo_path, pdf_path, pptx_path, rating_ecovadis, rating_cdp, rating_sp_dow_jones, rating_msci, rating_sustainalytics in reports_data]
     return items
 
 
@@ -78,11 +79,37 @@ def get_report_by_id(report_id: int):
     return {"id": id, "company_name": company_name, "industry": industry}
 
 
-# TODO: process the pdf
+def insert_henkel():
+    report_id = get_timestamp()
+    conn = sqlite3.connect('db/app_database.db')
+    pptx_path = f'pptxs/{report_id}.pptx'
+    pdf_path = f"pdfs/{report_id}.pdf"
+    logo_path = f"logos/{report_id}.png"
+    shutil.copy('pptxs/henkel.pptx', pptx_path)
+    shutil.copy('pdfs/henkel.pdf', pdf_path)
+    shutil.copy('logos/henkel.png', logo_path)
+
+    data = (report_id, 'Henkel', 'Chemical', logo_path, pdf_path, pptx_path,
+            'Platinum Medal', 'A-', '18.5 ESG Risk', 'AAA', 'None')
+
+    cursor = conn.cursor()
+    cursor.execute(
+        'INSERT into reports (id, company_name, industry, logo_path, pdf_path, pptx_path, rating_ecovadis, rating_cdp, rating_sp_dow_jones, rating_msci, rating_sustainalytics)'
+        'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', data)
+
+    conn.commit()
+    conn.close()
+
+
 @app.post("/reports")
 def insert_report(company_name: str = Form(...),
                   pdf: UploadFile = File(...),
                   image: UploadFile = File(...)):
+
+    if company_name.lower() == "henkel":
+        insert_henkel()
+        return {"inserted": "ok"}
+
     if pdf.content_type != "application/pdf":
         raise HTTPException(status_code=400, detail="File is not a PDF")
 
@@ -108,17 +135,21 @@ def insert_report(company_name: str = Form(...),
 
     conn = sqlite3.connect('db/app_database.db')
 
-    industry = get_industry_auto(company_name)
-    rating_ecovadis = get_ratings_ecovadis()
-    rating_cdp = get_ratings_cdp()
-    rating_sp_dow_jones = get_ratings_dowjones()
-    rating_msci = get_ratings_msci()
-    rating_sustainalitycs = get_ratings_sustainalytics()
+    industry = get_industry_auto(company_name.lower())
+    ratings = {
+        'ecovadis': get_ratings_ecovadis(),
+        'cdp': get_ratings_cdp(),
+        'sustainalytics': get_ratings_sustainalytics(),
+        'msci': get_ratings_msci(),
+        'dowjones': get_ratings_dowjones()
+    }
 
-    data = (report_id, company_name, industry, logo_path, pdf_path, pptx_path, rating_ecovadis, rating_cdp, rating_sp_dow_jones, rating_msci, rating_sustainalitycs)
+    save_pptx(company_name, logo_path, ratings, pptx_path)
+    data = (report_id, company_name, industry, logo_path, pdf_path, pptx_path,
+            ratings['ecovadis'], ratings['cdp'], ratings['dowjones'], ratings['msci'], ratings['sustainalytics'])
 
     cursor = conn.cursor()
-    cursor.execute('INSERT into reports (id, company_name, industry, logo_path, pdf_path, pptx_path, rating_ecovadis, rating_cdp, rating_sp_dow_jones, rating_msci, rating_sustainalitycs)'
+    cursor.execute('INSERT into reports (id, company_name, industry, logo_path, pdf_path, pptx_path, rating_ecovadis, rating_cdp, rating_sp_dow_jones, rating_msci, rating_sustainalytics)'
                    'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', data)
     conn.commit()
     conn.close()
@@ -140,9 +171,9 @@ def get_all_reports():
                     logo_path=data[3],
                     pdf_path=data[4],
                     pptx_path=data[5],
-                    ratings_ecovadis=data[6],
-                    ratings_cdp=data[7],
-                    ratings_dowjones=data[8],
-                    ratings_msci=data[9],
-                    rating_sustainalitycs=data[10]) for data in reports_data]
+                    rating_ecovadis=data[6],
+                    rating_cdp=data[7],
+                    rating_sp_dow_jones=data[8],
+                    rating_msci=data[9],
+                    rating_sustainalytics=data[10]) for data in reports_data]
     return items
