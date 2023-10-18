@@ -1,4 +1,5 @@
 from pptx import Presentation
+from pptx.util import Inches
 import copy
 
 
@@ -88,4 +89,8 @@ if __name__ == '__main__':
         if shape.name == 'Enviromental':
             fill_env_data(env_data, shape.shapes)
 
+    
+    img_path = "C:/Users/crugi/Pictures/Wallpapers/Wooper.png"
+    pic = slide.shapes.add_picture(img_path, left=Inches(0.15), top=Inches(0.23), width=Inches(1), height=Inches(0.7))
+    
     presentation.save('output.pptx')
