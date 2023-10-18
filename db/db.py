@@ -15,10 +15,10 @@ cursor.execute('''
         pptx_path TEXT,
         rating_ecovadis TEXT,
         rating_cdp TEXT,
-        rating_sustainalitycs TEXT,
+        rating_sustainalytics TEXT,
         rating_msci TEXT,
         rating_sp_dow_jones TEXT,
-        base_of_operations TEXT,
+        location TEXT,
         employees_number INT,
         risks TEXT,
         opportunities TEXT,
@@ -37,7 +37,7 @@ cursor.execute('''
 #     base_of_operations, employees_number, risks, opportunities, env_general, env_emission_management, env_resources_management, env_waste_management,
 #     social, governance_economics
 # ) VALUES (
-#     '123456789', 'Henkel', 'Chemical', 'logos/123456789.png', 'pdfs/123456789.pdf', 'pptxs/123456789.pptx', 'Platinum Medal', 'A-', '18.5 ESG Risk', 'AAA', 'None',
+#     '123456789', 'Henkel', 'Chemical', 'logos/henkel.png', 'pdfs/henkel.pdf', 'pptxs/henkel.pptx', 'Platinum Medal', 'A-', '18.5 ESG Risk', 'AAA', 'None',
 #     'Duesseldorf', 519500, 'Environmental risks', 'Market expansion', 'Green initiatives', 'Reduced emissions', 'Resource efficiency', 'Waste reduction',
 #     'Community engagement', 'Strong governance'
 # )
