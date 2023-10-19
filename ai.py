@@ -34,12 +34,6 @@ INDUSTRIES = [
     "Utilities",
 ]
 
-INDUSTRIES_AUTO = [
-    "Chemical",
-    "Tech",
-    "Food",
-]
-
 RATINGS_ECOVADIS = [
     "Platinum",
     "Gold",
@@ -282,100 +276,6 @@ OPPORTUNITIES = [
     "Leverage production heat effectively, warming neighboring offices and enhancing energy efficiency."
 ]
 
-ENV_GENERAL = [
-    "Improved traceability of palm-based raw materials by 5% points.",
-    "Renewed the company's contract for renewable energy sources.",
-    "Optimizing transportation and logistics chains by analyzing carbon emissions.",
-    "Evaluating carbon footprint of logistics in 18 countries for CO2 reduction.",
-    "Increasing ocean freight while decreasing reliance on air transportation.",
-    "Investing in alternative drive trains such as battery and hydrogen power.",
-    "Expanding digital tools to enhance efficiency in the logistics sector.",
-    "Achieved 5% points increase in traceability for palm-based materials.",
-    "Secured renewed renewable energy contract for sustainable operations.",
-    "Analyzing logistics' carbon footprint for further CO2 emissions reduction.",
-    "Assessing carbon emissions to reduce logistics' impact in 18 countries.",
-    "Transitioning to more ocean freight and reducing reliance on air transport.",
-    "Exploring battery and hydrogen-powered drive trains for eco-friendly options.",
-    "Enhancing efficiency in logistics through the expansion of digital tools.",
-    "Palm-based raw material traceability improved by 5% points.",
-    "Company's renewable energy contract successfully renewed.",
-    "Analyzing logistics' carbon emissions for more eco-friendly practices.",
-    "Reducing carbon footprint in logistics across 18 operating countries.",
-    "Shifted focus to ocean freight, minimizing reliance on air transportation.",
-    "Investing in battery and hydrogen-powered drive trains for sustainability.",
-    "Increasing logistics efficiency through the adoption of digital tools.",
-    "Improved traceability rates for palm-based raw materials by 5% points.",
-    "Renewed contract for renewable energy sources to support sustainability.",
-    "Analyzing logistics' carbon emissions to achieve further reductions.",
-    "Assessing CO2 impact in logistics across 18 countries for eco-friendly solutions.",
-    "Transitioning to ocean freight, reducing environmental impact of air transport.",
-    "Exploring eco-friendly drive trains, including battery and hydrogen-powered ones.",
-    "Expanding digital tools to optimize logistics and enhance efficiency.",
-    "Achieved a 5% points increase in palm-based raw material traceability.",
-    "Successfully renewed the company's contract for renewable energy.",
-    "Analyzing carbon emissions in logistics for sustainable CO2 reduction.",
-    "Reducing environmental impact by optimizing logistics in 18 countries.",
-    "Shifting to ocean freight, minimizing ecological effects of air transport.",
-    "Investigating battery and hydrogen-powered drive trains for sustainability.",
-    "Enhancing logistics efficiency through the expansion of digital solutions.",
-    "Improved traceability for palm-based raw materials by 5% points.",
-    "Renewed renewable energy contract to support green initiatives.",
-    "Evaluating logistics' carbon emissions for further CO2 reductions.",
-    "Assessing CO2 impact in logistics across 18 countries for greener practices.",
-    "Increasing ocean freight while reducing reliance on air transport.",
-    "Investigating battery and hydrogen-powered drive trains for sustainable options.",
-    "Expanding digital tools to optimize logistics and enhance overall efficiency.",
-    "Achieved 5% points increase in traceability for palm-based materials.",
-    "Successfully renewed company's renewable energy contract.",
-    "Analyzing logistics' carbon emissions for sustainable practices.",
-    "Reducing carbon footprint in logistics across 18 operating countries.",
-    "Transitioning to ocean freight, minimizing reliance on air transportation.",
-    "Exploring battery and hydrogen-powered drive trains for sustainability.",
-    "Enhancing efficiency in logistics through the expansion of digital tools.",
-    "Improved traceability rates for palm-based raw materials by 5% points.",
-    "Successfully renewed contract for renewable energy sources.",
-    "Analyzing logistics' carbon emissions to achieve further reductions.",
-    "Assessing CO2 impact in logistics across 18 countries for eco-friendly solutions.",
-    "Transitioning to ocean freight, reducing environmental impact of air transport.",
-    "Exploring eco-friendly drive trains, including battery and hydrogen-powered ones.",
-    "Expanding digital tools to optimize logistics and enhance efficiency.",
-    "Achieved a 5% points increase in palm-based raw material traceability.",
-    "Successfully renewed the company's contract for renewable energy.",
-    "Analyzing carbon emissions in logistics for sustainable CO2 reduction.",
-    "Reducing environmental impact by optimizing logistics in 18 countries.",
-    "Shifting to ocean freight, minimizing ecological effects of air transport.",
-    "Investigating battery and hydrogen-powered drive trains for sustainability.",
-    "Enhancing logistics efficiency through the expansion of digital solutions.",
-    "Improved traceability for palm-based raw materials by 5% points.",
-    "Renewed renewable energy contract to support green initiatives.",
-    "Evaluating logistics' carbon emissions for further CO2 reductions.",
-    "Assessing CO2 impact in logistics across 18 countries for greener practices.",
-    "Increasing ocean freight while reducing reliance on air transport.",
-    "Investigating battery and hydrogen-powered drive trains for sustainable options.",
-    "Expanding digital tools to optimize logistics and enhance overall efficiency.",
-    "Achieved 5% points increase in traceability for palm-based materials.",
-    "Successfully renewed company's renewable energy contract.",
-    "Analyzing logistics' carbon emissions for sustainable practices.",
-    "Reducing carbon footprint in logistics across 18 operating countries.",
-    "Transitioning to ocean freight, minimizing reliance on air transportation.",
-    "Exploring battery and hydrogen-powered drive trains for sustainability.",
-    "Enhancing efficiency in logistics through the expansion of digital tools.",
-    "Improved traceability rates for palm-based raw materials by 5% points.",
-    "Successfully renewed contract for renewable energy sources.",
-    "Analyzing logistics' carbon emissions to achieve further reductions.",
-    "Assessing CO2 impact in logistics across 18 countries for eco-friendly solutions.",
-    "Transitioning to ocean freight, reducing environmental impact of air transport.",
-    "Exploring eco-friendly drive trains, including battery and hydrogen-powered ones.",
-    "Expanding digital tools to optimize logistics and enhance efficiency.",
-    "Achieved a 5% points increase in palm-based raw material traceability.",
-    "Successfully renewed the company's contract for renewable energy.",
-    "Analyzing carbon emissions in logistics for sustainable CO2 reduction.",
-    "Reducing environmental impact by optimizing logistics in 18 countries.",
-    "Shifting to ocean freight, minimizing ecological effects of air transport.",
-    "Investigating battery and hydrogen-powered drive trains for sustainability.",
-    "Enhancing logistics efficiency through the expansion of digital solutions."
-]
-
 ENV_EMISSION = [
     "Aiming for 100% renewable energy by 2030, currently at 70% utilization.",
     "Targeting a 65% reduction in CO2 emissions from operations by 2025.",
@@ -440,7 +340,8 @@ ENV_EMISSION = [
     "Striving to achieve 100% renewable energy usage by 2030, currently at 70%.",
     "Aiming for a 65% reduction in CO2 emissions from operations by 2025.",
     "Seeking a 30% decrease in CO2 emissions from raw materials and packaging.",
-    "Targeting a maximum of 100 million tons for value-chain CO2 by 2025."
+    "Targeting a maximum of 100 million tons for value-chain CO2 by 2025.",
+    'Improved traceability of palm-based raw materials by 5% points.', "Renewed the company's contract for renewable energy sources.", 'Optimizing transportation and logistics chains by analyzing carbon emissions.', 'Evaluating carbon footprint of logistics in 18 countries for CO2 reduction.', 'Increasing ocean freight while decreasing reliance on air transportation.', 'Investing in alternative drive trains such as battery and hydrogen power.', 'Expanding digital tools to enhance efficiency in the logistics sector.', 'Achieved 5% points increase in traceability for palm-based materials.', 'Secured renewed renewable energy contract for sustainable operations.', "Analyzing logistics' carbon footprint for further CO2 emissions reduction.", "Assessing carbon emissions to reduce logistics' impact in 18 countries.", 'Transitioning to more ocean freight and reducing reliance on air transport.', 'Exploring battery and hydrogen-powered drive trains for eco-friendly options.', 'Enhancing efficiency in logistics through the expansion of digital tools.', 'Palm-based raw material traceability improved by 5% points.', "Company's renewable energy contract successfully renewed.", "Analyzing logistics' carbon emissions for more eco-friendly practices.", 'Reducing carbon footprint in logistics across 18 operating countries.', 'Shifted focus to ocean freight, minimizing reliance on air transportation.', 'Investing in battery and hydrogen-powered drive trains for sustainability.', 'Increasing logistics efficiency through the adoption of digital tools.', 'Improved traceability rates for palm-based raw materials by 5% points.', 'Renewed contract for renewable energy sources to support sustainability.', "Analyzing logistics' carbon emissions to achieve further reductions.", 'Assessing CO2 impact in logistics across 18 countries for eco-friendly solutions.', 'Transitioning to ocean freight, reducing environmental impact of air transport.', 'Exploring eco-friendly drive trains, including battery and hydrogen-powered ones.', 'Expanding digital tools to optimize logistics and enhance efficiency.', 'Achieved a 5% points increase in palm-based raw material traceability.', "Successfully renewed the company's contract for renewable energy."
 ]
 
 ENV_RESOURCES = [
@@ -499,14 +400,15 @@ ENV_RESOURCES = [
     "Efforts underway to reduce water use by 35% per ton of product by 2025.",
     "Committing to sourcing 100% certified or externally confirmed palm and kernel oil by 2025.",
     "Pursuing a 35% decrease in water usage per ton of product by 2025.",
-    "Aiming for 100% responsibly sourced palm and kernel oil by the year 2025."
+    "Aiming for 100% responsibly sourced palm and kernel oil by the year 2025.",
+    'Analyzing carbon emissions in logistics for sustainable CO2 reduction.', 'Reducing environmental impact by optimizing logistics in 18 countries.', 'Shifting to ocean freight, minimizing ecological effects of air transport.', 'Investigating battery and hydrogen-powered drive trains for sustainability.', 'Enhancing logistics efficiency through the expansion of digital solutions.', 'Improved traceability for palm-based raw materials by 5% points.', 'Renewed renewable energy contract to support green initiatives.', "Evaluating logistics' carbon emissions for further CO2 reductions.", 'Assessing CO2 impact in logistics across 18 countries for greener practices.', 'Increasing ocean freight while reducing reliance on air transport.', 'Investigating battery and hydrogen-powered drive trains for sustainable options.', 'Expanding digital tools to optimize logistics and enhance overall efficiency.', 'Achieved 5% points increase in traceability for palm-based materials.', "Successfully renewed company's renewable energy contract.", "Analyzing logistics' carbon emissions for sustainable practices.", 'Reducing carbon footprint in logistics across 18 operating countries.', 'Transitioning to ocean freight, minimizing reliance on air transportation.', 'Exploring battery and hydrogen-powered drive trains for sustainability.', 'Enhancing efficiency in logistics through the expansion of digital tools.', 'Improved traceability rates for palm-based raw materials by 5% points.', 'Successfully renewed contract for renewable energy sources.', "Analyzing logistics' carbon emissions to achieve further reductions.", 'Assessing CO2 impact in logistics across 18 countries for eco-friendly solutions.', 'Transitioning to ocean freight, reducing environmental impact of air transport.', 'Exploring eco-friendly drive trains, including battery and hydrogen-powered ones.', 'Expanding digital tools to optimize logistics and enhance efficiency.', 'Achieved a 5% points increase in palm-based raw material traceability.', "Successfully renewed the company's contract for renewable energy.", 'Analyzing carbon emissions in logistics for sustainable CO2 reduction.', 'Reducing environmental impact by optimizing logistics in 18 countries.'
 ]
 
 SOCIAL = [
     "Launched 'Sustainability at Heart' program to engage and empower employees.",
     "Enhancing small farmers' lives while preserving nature.",
     "Collaborating consistently with OECD-backed coalition, B4IG.",
-    "Introduced 'I am unique. We are Henkel' campaign and diversity week.",
+    "Introduced 'I am unique. We are diverse' campaign and diversity week.",
     "Established LGBTQ+ Network for openness and awareness at work.",
     "Striving for gender parity across all management levels by 2025.",
     "Partnering with ability:IN to promote disability inclusion.",
@@ -660,7 +562,18 @@ ENV_WASTE = [
     "Dedicate efforts to make all packaging 100% recyclable or reusable by 2025, building on our current 87% rate.",
     "Pledge to halve total waste by 50% by 2025 compared to 2010, demonstrating our strong commitment to sustainability.",
     "Focus on eliminating plastic pollution from nature, setting an ambitious target.",
-    "Strive for 100% recyclable or reusable packaging by 2025, enhancing our current 87% rate.",
+    "Commit to reducing total waste by 50% by 2025 compared to 2010 levels, emphasizing our dedication to sustainability.",
+    "Aim for zero plastic waste in nature, setting a challenging goal.",
+    "Target 30% recycled plastic, reducing fossil-based virgin plastics by 50% in consumer goods packaging by 2025, from the current 16%.",
+    "Dedicate efforts to achieve 100% recyclable or reusable packaging by 2025, building on our current 87% rate.",
+    "Pledge to cut total waste by 50% by 2025 compared to 2010, showcasing our enduring commitment to sustainability.",
+    "Focus on eradicating plastic pollution from nature, setting a high aspiration.",
+    "Commit to reducing total waste by 50% by 2025 compared to 2010 levels, emphasizing our dedication to sustainability.",
+    "Aim for a future with no plastic waste in nature, setting a high aspiration.",
+    "Target 30% recycled plastic, cutting fossil-based virgin plastics by 50% in consumer goods packaging by 2025, up from the current 16%.",
+    "Dedicate efforts to make all packaging 100% recyclable or reusable by 2025, building on our current 87% rate.",
+    "Pledge to halve total waste by 50% by 2025 compared to 2010, demonstrating our strong commitment to sustainability.",
+    "Focus on eliminating plastic pollution from nature, setting an ambitious target.",
     "Commit to reducing total waste by 50% by 2025 compared to 2010 levels, emphasizing our dedication to sustainability.",
     "Aim for zero plastic waste in nature, setting a challenging goal.",
     "Target 30% recycled plastic, reducing fossil-based virgin plastics by 50% in consumer goods packaging by 2025, from the current 16%.",
@@ -674,63 +587,42 @@ ENV_WASTE = [
     "Dedicate efforts to make all packaging 100% recyclable or reusable by 2025, building on our current 87% rate.",
     "Pledge to halve total waste by 50% by 2025 compared to 2010, demonstrating our strong commitment to sustainability.",
     "Focus on eliminating plastic pollution from nature, setting an ambitious target.",
-    "Strive for 100% recyclable or reusable packaging by 2025, enhancing our current 87% rate.",
     "Commit to reducing total waste by 50% by 2025 compared to 2010 levels, emphasizing our dedication to sustainability.",
     "Aim for zero plastic waste in nature, setting a challenging goal.",
     "Target 30% recycled plastic, reducing fossil-based virgin plastics by 50% in consumer goods packaging by 2025, from the current 16%.",
     "Dedicate efforts to achieve 100% recyclable or reusable packaging by 2025, building on our current 87% rate.",
     "Pledge to cut total waste by 50% by 2025 compared to 2010, showcasing our enduring commitment to sustainability.",
     "Focus on eradicating plastic pollution from nature, setting a high aspiration.",
-    "Strive for 100% recyclable or reusable packaging by 2025, enhancing our current 87% rate.",
     "Commit to reducing total waste by 50% by 2025 compared to 2010 levels, emphasizing our dedication to sustainability.",
     "Aim for a future with no plastic waste in nature, setting a high aspiration.",
     "Target 30% recycled plastic, cutting fossil-based virgin plastics by 50% in consumer goods packaging by 2025, up from the current 16%.",
     "Dedicate efforts to make all packaging 100% recyclable or reusable by 2025, building on our current 87% rate.",
     "Pledge to halve total waste by 50% by 2025 compared to 2010, demonstrating our strong commitment to sustainability.",
     "Focus on eliminating plastic pollution from nature, setting an ambitious target.",
-    "Strive for 100% recyclable or reusable packaging by 2025, enhancing our current 87% rate.",
-    "Commit to reducing total waste by 50% by 2025 compared to 2010 levels, emphasizing our dedication to sustainability.",
-    "Aim for zero plastic waste in nature, setting a challenging goal.",
-    "Target 30% recycled plastic, reducing fossil-based virgin plastics by 50% in consumer goods packaging by 2025, from the current 16%.",
-    "Dedicate efforts to achieve 100% recyclable or reusable packaging by 2025, building on our current 87% rate.",
-    "Pledge to cut total waste by 50% by 2025 compared to 2010, showcasing our enduring commitment to sustainability.",
-    "Focus on eradicating plastic pollution from nature, setting a high aspiration.",
-    "Strive for 100% recyclable or reusable packaging by 2025, enhancing our current 87% rate.",
-    "Commit to reducing total waste by 50% by 2025 compared to 2010 levels, emphasizing our dedication to sustainability.",
-    "Aim for a future with no plastic waste in nature, setting a high aspiration.",
-    "Target 30% recycled plastic, cutting fossil-based virgin plastics by 50% in consumer goods packaging by 2025, up from the current 16%.",
-    "Dedicate efforts to make all packaging 100% recyclable or reusable by 2025, building on our current 87% rate.",
-    "Pledge to halve total waste by 50% by 2025 compared to 2010, demonstrating our strong commitment to sustainability.",
-    "Focus on eliminating plastic pollution from nature, setting an ambitious target.",
-    "Strive for 100% recyclable or reusable packaging by 2025, enhancing our current 87% rate.",
     "Commit to reducing total waste by 50% by 2025 compared to 2010 levels, emphasizing our dedication to sustainability.",
     "Aim for zero plastic waste in natural habitats, setting an ambitious objective.",
     "Target 30% recycled plastic, reducing fossil-based virgin plastics by 50% in consumer goods packaging by 2025, up from the current 16%.",
     "Dedicate efforts to ensure all packaging is 100% recyclable or reusable by 2025, building on our current 87% rate.",
     "Pledge to halve total waste by 50% by 2025 compared to 2010, demonstrating our unwavering commitment to sustainability.",
     "Focus on eradicating plastic pollution from natural ecosystems, setting a challenging goal.",
-    "Strive for 100% recyclable or reusable packaging by 2025, enhancing our current 87% rate.",
     "Commit to reducing total waste by 50% by 2025 compared to 2010 levels, emphasizing our dedication to sustainability.",
     "Aim for a future with no plastic waste in natural environments, setting a high aspiration.",
     "Target 30% recycled plastic, cutting fossil-based virgin plastics by 50% in consumer goods packaging by 2025, up from the current 16%.",
     "Dedicate efforts to make all packaging 100% recyclable or reusable by 2025, building on our current 87% rate.",
     "Pledge to halve total waste by 50% by 2025 compared to 2010, demonstrating our strong commitment to sustainability.",
     "Focus on eliminating plastic pollution from natural habitats, setting an ambitious target.",
-    "Strive for 100% recyclable or reusable packaging by 2025, enhancing our current 87% rate.",
     "Commit to reducing total waste by 50% by 2025 compared to 2010 levels, emphasizing our dedication to sustainability.",
     "Aim for zero plastic waste in nature, setting a challenging goal.",
     "Target 30% recycled plastic, reducing fossil-based virgin plastics by 50% in consumer goods packaging by 2025, from the current 16%.",
     "Dedicate efforts to achieve 100% recyclable or reusable packaging by 2025, building on our current 87% rate.",
     "Pledge to cut total waste by 50% by 2025 compared to 2010, showcasing our enduring commitment to sustainability.",
     "Focus on eradicating plastic pollution from natural ecosystems, setting a high aspiration.",
-    "Strive for 100% recyclable or reusable packaging by 2025, enhancing our current 87% rate.",
     "Commit to reducing total waste by 50% by 2025 compared to 2010 levels, emphasizing our dedication to sustainability.",
     "Aim for a future with no plastic waste in nature, setting a high aspiration.",
     "Target 30% recycled plastic, cutting fossil-based virgin plastics by 50% in consumer goods packaging by 2025, up from the current 16%.",
     "Dedicate efforts to make all packaging 100% recyclable or reusable by 2025, building on our current 87% rate.",
     "Pledge to halve total waste by 50% by 2025 compared to 2010, demonstrating our strong commitment to sustainability.",
     "Focus on eliminating plastic pollution from nature, setting an ambitious target.",
-    "Strive for 100% recyclable or reusable packaging by 2025, enhancing our current 87% rate.",
     "Commit to reducing total waste by 50% by 2025 compared to 2010 levels, emphasizing our dedication to sustainability.",
     "Aim for zero plastic waste in nature, setting a challenging goal.",
     "Target 30% recycled plastic, reducing fossil-based virgin plastics by 50% in consumer goods packaging by 2025, from the current 16%.",
@@ -744,15 +636,14 @@ ENV_WASTE = [
     "Dedicate efforts to make all packaging 100% recyclable or reusable by 2025, building on our current 87% rate.",
     "Pledge to halve total waste by 50% by 2025 compared to 2010, demonstrating our strong commitment to sustainability.",
     "Focus on eliminating plastic pollution from nature, setting an ambitious target.",
-    "Strive for 100% recyclable or reusable packaging by 2025, enhancing our current 87% rate.",
     "Commit to reducing total waste by 50% by 2025 compared to 2010 levels, emphasizing our dedication to sustainability.",
     "Aim for zero plastic waste in nature, setting a challenging goal.",
     "Target 30% recycled plastic, reducing fossil-based virgin plastics by 50% in consumer goods packaging by 2025, from the current 16%.",
     "Dedicate efforts to achieve 100% recyclable or reusable packaging by 2025, building on our current 87% rate.",
     "Pledge to cut total waste by 50% by 2025 compared to 2010, showcasing our enduring commitment to sustainability.",
     "Focus on eradicating plastic pollution from nature, setting a high aspiration.",
-    "Strive for 100% recyclable or reusable packaging by 2025, enhancing our current 87% rate.",
     "Commit to reducing total waste by 50% by 2025 compared to 2010 levels, emphasizing our dedication to sustainability.",
+    'Shifting to ocean freight, minimizing ecological effects of air transport.', 'Investigating battery and hydrogen-powered drive trains for sustainability.', 'Enhancing logistics efficiency through the expansion of digital solutions.', 'Improved traceability for palm-based raw materials by 5% points.', 'Renewed renewable energy contract to support green initiatives.', "Evaluating logistics' carbon emissions for further CO2 reductions.", 'Assessing CO2 impact in logistics across 18 countries for greener practices.', 'Increasing ocean freight while reducing reliance on air transport.', 'Investigating battery and hydrogen-powered drive trains for sustainable options.', 'Expanding digital tools to optimize logistics and enhance overall efficiency.', 'Achieved 5% points increase in traceability for palm-based materials.', "Successfully renewed company's renewable energy contract.", "Analyzing logistics' carbon emissions for sustainable practices.", 'Reducing carbon footprint in logistics across 18 operating countries.', 'Transitioning to ocean freight, minimizing reliance on air transportation.', 'Exploring battery and hydrogen-powered drive trains for sustainability.', 'Enhancing efficiency in logistics through the expansion of digital tools.', 'Improved traceability rates for palm-based raw materials by 5% points.', 'Successfully renewed contract for renewable energy sources.', "Analyzing logistics' carbon emissions to achieve further reductions.", 'Assessing CO2 impact in logistics across 18 countries for eco-friendly solutions.', 'Transitioning to ocean freight, reducing environmental impact of air transport.', 'Exploring eco-friendly drive trains, including battery and hydrogen-powered ones.', 'Expanding digital tools to optimize logistics and enhance efficiency.', 'Achieved a 5% points increase in palm-based raw material traceability.', "Successfully renewed the company's contract for renewable energy.", 'Analyzing carbon emissions in logistics for sustainable CO2 reduction.', 'Reducing environmental impact by optimizing logistics in 18 countries.', 'Shifting to ocean freight, minimizing ecological effects of air transport.', 'Investigating battery and hydrogen-powered drive trains for sustainability.', 'Enhancing logistics efficiency through the expansion of digital solutions.'
 ]
 
 def get_ratings_cdp():
@@ -776,15 +667,17 @@ def get_industry_auto(company_name):
     industry = ""
 
     if company_name == "henkel":
-        industry = INDUSTRIES_AUTO[0]
-    elif company_name == "apple":
-        industry = INDUSTRIES_AUTO[1]
-    elif company_name == "mcdonalds":
-        industry = INDUSTRIES_AUTO[2]
+        return "Chemical"
+    elif company_name in ["apple", "amazon"]:
+        return "Tech"
+    elif company_name in ["mcdonalds"]:
+        return "Food"
+    elif company_name in ["volkswagen"]:
+        return "Automotive"
+    elif company_name in ["aldi"]:
+        return "Retail"
     else:
-        industry = "N/A"
-
-    return industry
+        return "N/A"
 
 
 def get_industry():
@@ -803,9 +696,14 @@ def get_location(company_name):
         return "Cupertino"
     elif company_name == "mcdonalds":
         return "Chicago"
+    elif company_name == "amazon":
+        return "Seattle"
+    elif company_name == "aldi":
+        return "Essen"
+    elif company_name == "volkswagen":
+        return "Wolfsburg"
     else:
         return "-"
-
 
 def get_head_count():
     return f'{random.randrange(12, 500)}000'
@@ -818,7 +716,7 @@ def build_arr_str(arr):
 
 
 def generate_risks():
-    risks = random.sample(RISKS, 2)
+    risks = random.sample(RISKS, 3)
 
     return build_arr_str(risks)
 
@@ -830,13 +728,13 @@ def generate_opportunities():
 
 
 def generate_social():
-    social = random.sample(SOCIAL, 8)
+    social = random.sample(SOCIAL, 10)
 
     return build_arr_str(social)
 
 
 def generate_governance():
-    governance = random.sample(GOVERNANCE, 5)
+    governance = random.sample(GOVERNANCE, 7)
 
     return build_arr_str(governance)
 
@@ -848,13 +746,13 @@ def generate_env_general():
 
 
 def generate_env_emission():
-    emission = random.sample(ENV_EMISSION, 4)
+    emission = random.sample(ENV_EMISSION, 6)
 
     return build_arr_str(emission)
 
 
 def generate_env_resources():
-    resources = random.sample(ENV_RESOURCES, 3)
+    resources = random.sample(ENV_RESOURCES, 5)
 
     return build_arr_str(resources)
 
