@@ -90,7 +90,7 @@ def insert_henkel():
     shutil.copy('logos/henkel.png', logo_path)
 
     data = (report_id, 'Henkel', 'Chemical', logo_path, pdf_path, pptx_path,
-            'Platinum Medal', 'A-', '18.5 ESG Risk', 'AAA', 'None')
+            'Platinum', 'A-', 'A+', 'AAA', 'None')
 
     cursor = conn.cursor()
     cursor.execute(

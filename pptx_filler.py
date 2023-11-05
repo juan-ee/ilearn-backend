@@ -24,8 +24,6 @@ def fill_bullet_list_data(text, shape):
 
 def fill_env_data(data, shapes):
     for shape in shapes:
-        if shape.name == 'General':
-            fill_bullet_list_data(data['general'], shape)
         if shape.name == 'EmissionManagement':
             fill_bullet_list_data(data['emission_management'], shape)
         if shape.name == 'ResourcesManagement':
@@ -41,8 +39,8 @@ def fill_logo(slide, logo_path):
 def save_pptx(company_name, logo_path, ratings, pptx_path):
     general_info = {
         1: company_name,
-        3: get_industry_auto(company_name),
-        5: get_location(company_name),
+        3: get_industry_auto(company_name.lower()),
+        5: get_location(company_name.lower()),
         7: get_head_count()
     }
 
@@ -63,7 +61,6 @@ def save_pptx(company_name, logo_path, ratings, pptx_path):
     governance = generate_governance()
 
     env_data = {
-        'general': generate_env_general(),
         'emission_management': generate_env_emission(),
         'resources_management': generate_env_resources(),
         'waste_management': generate_env_waste(),
